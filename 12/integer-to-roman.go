@@ -2,33 +2,29 @@ package _2
 
 func intToRoman(num int) string {
 	var ans string
-	for num > 0 {
-		cur := num % 10
-		num /= 10
-
+	a := []int{1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000}
+	b := []string{"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"}
+	for i := len(a) - 1; i >= 0; i-- {
+		for num >= a[i] {
+			ans += b[i]
+			num -= a[i]
+		}
 	}
-
 	return ans
 }
 
-func getRoman(num int) string {
-	cur := num % 10
-	switch cur {
-	case 'I':
-		cur = 1
-	case 'V':
-		cur = 5
-	case 'X':
-		cur = 10
-	case 'L':
-		cur = 50
-	case 'C':
-		cur = 100
-	case 'D':
-		cur = 500
-	case 'M':
-		cur = 1000
-	default:
-		cur = 0
-	}
-}
+//m := map[int]string{
+//	1:  "I",
+//	4:  "IV",
+//	5:  "V",
+//	9:  "IX",
+//	10: "X",
+//	40:	 "XL",
+//	50: "L",
+//	90: "XC",
+//	100: "C",
+//	400: "CD",
+//	500: "D",
+//	900: "CM",
+//	1000: "M",
+//}
