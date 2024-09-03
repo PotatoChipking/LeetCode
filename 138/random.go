@@ -12,6 +12,7 @@ func copyRandomList(head *Node) *Node {
 	var reverse func(n *Node) *Node
 	// go func函数变量的使用，用于在单个函数内进行递归
 	// go func时，函数体后跟参数用于goroutine执行时传入
+
 	reverse = func(n *Node) *Node {
 		if n == nil {
 			return nil
